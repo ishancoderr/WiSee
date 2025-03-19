@@ -3,11 +3,11 @@ import csv
 def process_data_to_csv(input_file, output_file):
     # Initialize variables
     tile_no = 1
-    current_tile_data = {'Tile No': tile_no, 'Receiver 1': '', 'Receiver 2': '', 'Receiver 3': '', 'Human Presence': 'True'}
+    current_tile_data = {'Tile No': tile_no, 'Receiver 1': '', 'Receiver 2': '', 'Receiver 3': '', 'Human Status': '2'}
 
     # Open the output CSV file for writing
     with open(output_file, 'w', newline='') as csvfile:
-        fieldnames = ['Tile No', 'Receiver 1', 'Receiver 2', 'Receiver 3', 'Human Presence']
+        fieldnames = ['Tile No', 'Receiver 1', 'Receiver 2', 'Receiver 3', 'Human Status']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
 
@@ -26,7 +26,7 @@ def process_data_to_csv(input_file, output_file):
 
                     # Check if all three receiver values are collected
                     if current_tile_data['Receiver 1'] and current_tile_data['Receiver 2'] and current_tile_data['Receiver 3']:
-                        # Write the row to CSV with Tile No and Human Presence
+                        # Write the row to CSV with Tile No and Human Status
                         writer.writerow(current_tile_data)
                         print(f"Written to CSV: {current_tile_data}")  # Debugging
                         # Reset the receiver values for the next set of data
@@ -41,8 +41,8 @@ def process_data_to_csv(input_file, output_file):
     print(f"CSV file '{output_file}' has been created successfully.")
 
 # Input and output file paths
-input_file = 'saveData.txt'  # Replace with your input file path
-output_file = 'output.csv'     # Replace with your desired output file path
+input_file = 'SaveMovingData1.txt'  # Replace with your input file path
+output_file = 'SaveMovingData1Output.txt'     # Replace with your desired output file path
 
 # Process the data
 process_data_to_csv(input_file, output_file)
