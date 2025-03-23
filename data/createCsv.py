@@ -3,7 +3,7 @@ import csv
 def process_data_to_csv(input_file, output_file):
     # Initialize variables
     tile_no = 1
-    current_tile_data = {'Tile No': tile_no, 'Receiver 1': '', 'Receiver 2': '', 'Receiver 3': '', 'Human Status': '2'}
+    current_tile_data = {'Tile No': tile_no, 'Receiver 1': '', 'Receiver 2': '', 'Receiver 3': '', 'Human Status': '1'}
 
     # Open the output CSV file for writing
     with open(output_file, 'w', newline='') as csvfile:
@@ -41,8 +41,8 @@ def process_data_to_csv(input_file, output_file):
     print(f"CSV file '{output_file}' has been created successfully.")
 
 # Input and output file paths
-input_file = 'SaveMovingData1.txt'  # Replace with your input file path
-output_file = 'SaveMovingData1Output.txt'     # Replace with your desired output file path
+input_file = 'SaveStationaryData17.txt'  # Replace with your input file path
+output_file = 'SaveStationaryData17Output.txt'     # Replace with your desired output file path
 
 # Process the data
 process_data_to_csv(input_file, output_file)
